@@ -10,8 +10,8 @@ export type CardProps = {
   cardNumber: string;
   expires: string;
   cardHolder: string;
-  index?: any;
-  onSwap?: any;
+  index?: string | number;
+  onSwap?: () => void
 };
 
 export type CardNumberProps = {

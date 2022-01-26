@@ -15,7 +15,6 @@ export const Header = ({title, amount}: HeaderProps) => {
         <View style={styles.imgContainer}>
           <Image source={require('./artworks.jpg')}
                  style={styles.img}
-
           />
         </View>
       </View>

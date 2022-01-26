@@ -7,8 +7,6 @@ import {CardProps} from "./utilities";
 
 export const Card = ({ backgroundColor, cardNumber, expires, cardHolder, onSwap}: CardProps) => {
 
-  const shadowColor = backgroundColor
-
   return (
     <Pressable onPress={() => onSwap}>
       <View style={[styles.card, {backgroundColor}]}>
