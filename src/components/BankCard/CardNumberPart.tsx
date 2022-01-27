@@ -3,7 +3,7 @@ import { StyleSheet, Text } from "react-native";
 import {CardNumberProps} from "./utilities";
 
 export const CardNumberPart = ({number}: CardNumberProps) => {
-  if (!number) number = "*  *  *  *";
+  if (!number) number = "* * * *";
 
   return <Text style={styles.cardNumber}>{number}</Text>
 }

@@ -11,7 +11,7 @@ export type CardProps = {
   expires: string;
   cardHolder: string;
   index?: string | number;
-  onSwap?: () => void
+  onSwap?: () => void;
 };
 
 export type CardNumberProps = {
