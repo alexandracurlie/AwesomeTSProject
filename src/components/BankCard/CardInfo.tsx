@@ -27,8 +27,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "300",
     letterSpacing: 0.4
-
-
   },
 
   info: {
