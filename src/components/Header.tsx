@@ -1,22 +1,19 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import {Avatar} from "./Avatar/Avatar";
 
 export type HeaderProps = {
   title?: string;
   amount: string;
 };
 
-export const Header = ({title, amount}: HeaderProps) => {
+export const Header = ({ title, amount }: HeaderProps) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{title}</Text>
       <View style={styles.content}>
         <Text style={styles.amount}>{amount}</Text>
-        <View style={styles.imgContainer}>
-          <Image source={require('./artworks.jpg')}
-                 style={styles.img}
-          />
-        </View>
+        <Avatar userMode={true}/>
       </View>
     </View>
   );
@@ -49,21 +46,4 @@ const styles = StyleSheet.create({
     color: '#171D33',
     fontFamily: "Sarabun-SemiBold",
   },
-
-  imgContainer: {
-    width: 40,
-    height: 40,
-    borderRadius: 50,
-    borderWidth: 3,
-    borderStyle: 'solid',
-    borderColor: '#DDDDEB',
-    overflow: "hidden",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  img: {
-    width: 40,
-    height: 40,
-  }
 });

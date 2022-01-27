@@ -39,9 +39,7 @@ export const CardCarousel = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F9FAFB',
-    height: "34%",
-    minHeight: 230,
+    aspectRatio: 1.8,
   },
 
   carouselItem: {
@@ -49,4 +47,3 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 })
-

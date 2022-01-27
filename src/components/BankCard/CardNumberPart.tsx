@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   cardNumber: {
     textAlign: 'center',
     color: '#fff',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '500',
     lineHeight: 26,
     fontFamily: 'Sarabun-SemiBold',
