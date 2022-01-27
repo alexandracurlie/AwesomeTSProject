@@ -1,10 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import {CardNumberPart} from "./CardNumberPart";
-
-export type CardNumberProps = {
-  number?: string
-}
+import {CardNumberProps} from "./utilities";
 
 export const CardNumber = ({number}: CardNumberProps) => {
 
@@ -22,5 +19,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: "baseline"
   },
 })

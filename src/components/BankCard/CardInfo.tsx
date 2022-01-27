@@ -23,9 +23,12 @@ const styles = StyleSheet.create({
 
   title: {
     textTransform: 'uppercase',
-    color: 'rgba(255, 255, 255, 0.8)',
-    lineHeight: 20,
+    color: '#fff',
     fontSize: 12,
+    fontWeight: "300",
+    letterSpacing: 0.4
+
+
   },
 
   info: {
@@ -33,5 +36,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 24,
+    letterSpacing: 0.1
   },
 });
