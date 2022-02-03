@@ -6,7 +6,9 @@ export const Tab = ({title, id, isActive, onPress}: TabProps) => (
     <Pressable style={[styles.container, isActive && activeStyles.container]}
                onPress={()=> onPress(id)}
     >
-      <Text style={[styles.title, isActive && activeStyles.title]}>{title}</Text>
+      <Text style={[styles.title, isActive && activeStyles.title]} key={id}>
+        {title}
+      </Text>
     </Pressable>
   )
 
