@@ -1,6 +1,7 @@
 import React from "react";
 import {Image, StyleSheet, View} from "react-native";
 import {AvatarProps} from "./utilities";
+import {Colors} from "../../styles";
 
 export const Avatar = ({userMode}: AvatarProps) => (
     <View style={styles.imgContainer}>
@@ -27,8 +28,7 @@ const styles = StyleSheet.create({
 
   mode: {
     borderWidth: 3,
-    borderStyle: 'solid',
-    borderColor: '#DDDDEB',
+    borderColor: Colors.avatar_border,
     borderRadius: 50,
   }
 })

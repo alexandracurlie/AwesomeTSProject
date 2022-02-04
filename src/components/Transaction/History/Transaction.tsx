@@ -2,9 +2,10 @@ import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 import {Avatar} from "../../Avatar/Avatar";
 import {TransactionProps} from "./utilities";
+import {Colors, Fonts} from "../../../styles";
 
 export const Transaction = ({ name, date, amount }: TransactionProps) => (
-    <View style={stylesEl.container}>
+    <View style={stylesEl.header}>
       <View style={stylesEl.image}>
         <Avatar userMode={false} />
       </View>
@@ -21,12 +22,12 @@ export const Transaction = ({ name, date, amount }: TransactionProps) => (
   )
 
 const stylesEl = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
-    borderRadius: 6,
+  header: {
     flexDirection: "row",
     padding: 15,
     marginVertical: 6,
+    backgroundColor: Colors.white,
+    borderRadius: 6,
   },
 
   image: {
@@ -39,23 +40,22 @@ const stylesEl = StyleSheet.create({
   },
 
   font: {
-    color:"#A6AAB4",
-    fontSize: 12,
-    fontFamily: "Sarabun-Medium",
+    color: Colors.gray,
+    fontFamily: Fonts.font,
     fontWeight: "300",
+    fontSize: 12,
     letterSpacing: 0.2,
-
   },
 
   name: {
-    color:"#171D33",
-    fontSize: 14,
+    color: Colors.black,
     fontWeight: "500",
+    fontSize: 14,
   },
 
   date: {
-    color:"#757F8C",
-    fontFamily: "Sarabun-Medium",
+    color: Colors.dark_gray,
+    fontFamily: Fonts.font,
     fontWeight: "400",
     fontSize: 12,
     lineHeight: 20,
@@ -68,8 +68,8 @@ const stylesEl = StyleSheet.create({
   },
 
   amount_title: {
-    color: "#FA2E69",
-    fontFamily: "Sarabun-Medium",
+    color: Colors.pink_negative,
+    fontFamily: Fonts.font,
     fontWeight: "600",
     fontSize: 16,
     textAlign: "right",

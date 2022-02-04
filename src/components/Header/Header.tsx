@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Avatar} from "./Avatar/Avatar";
+import {Avatar} from "../Avatar/Avatar";
+import {Colors, Fonts} from "../../styles";
 
 export type HeaderProps = {
   title?: string;
@@ -9,10 +10,10 @@ export type HeaderProps = {
 
 export const Header = ({ title, amount }: HeaderProps) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.header}>
       <Text style={styles.text}>{title}</Text>
       <View style={styles.content}>
-        <Text style={styles.amount}>{amount}</Text>
+        <Text style={styles.amount}>$ {amount}</Text>
         <Avatar userMode={true}/>
       </View>
     </View>
@@ -20,30 +21,30 @@ export const Header = ({ title, amount }: HeaderProps) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  header: {
     padding: 16,
   },
 
   text: {
+    color: Colors.gray,
+    fontFamily: Fonts.font,
     fontSize: 14,
-    lineHeight: 20,
     fontWeight: '500',
-    color: '#A6AAB4',
-    fontFamily: "Sarabun-Bold",
+    lineHeight: 20,
   },
 
   content: {
-    height: 42,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    height: 42,
     marginTop: 4,
   },
 
   amount: {
+    color: Colors.black,
+    fontFamily: Fonts.font,
+    fontWeight: '600',
     fontSize: 32,
     lineHeight: 42,
-    fontWeight: '600',
-    color: '#171D33',
-    fontFamily: "Sarabun-SemiBold",
   },
 });

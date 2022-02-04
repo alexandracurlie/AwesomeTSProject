@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
 import {View, Dimensions, StyleSheet} from 'react-native';
 import Carousel from 'react-native-anchor-carousel';
-import {Card} from "./BankCard/Card";
-import {cards} from "./BankCard/utilities";
+import {Card} from "../BankCard/Card";
+import {cards} from "../BankCard/utilities";
 
 export const CardCarousel = () => {
   const carouselRef = useRef();
@@ -15,15 +15,16 @@ export const CardCarousel = () => {
       carouselRef.current.scrollToIndex(index)
     }
     return <Card backgroundColor={item.backgroundColor}
-                cardNumber={item.cardNumber}
-                expires={item.expires}
-                cardHolder={item.cardHolder}
-                onSwap={onSwap}
+                 cardNumber={item.cardNumber}
+                 expires={item.expires}
+                 cardHolder={item.cardHolder}
+                 onSwap={onSwap}
+                 key={item.cardNumber}
           />
     }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.header}>
       <Carousel itemContainerStyle={styles.carouselItem}
                 data={cards}
                 renderItem={renderItem}
@@ -38,7 +39,7 @@ export const CardCarousel = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  header: {
     aspectRatio: 1.8,
   },
 

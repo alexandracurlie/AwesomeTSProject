@@ -3,6 +3,7 @@ import {StyleSheet, TextInput, View} from "react-native";
 import {TabPanel} from "../TabPanel/TabPanel";
 import {History} from "./History/History";
 import {tabs, getData} from "./History/utilities";
+import {Colors, Fonts} from "../../styles";
 
 export const TransactionHistory = () => {
 
@@ -30,10 +31,11 @@ const styles = StyleSheet.create({
   content: {
     padding: 16,
     height: "100%",
+    fontFamily: Fonts.font,
   },
 
   input: {
-    backgroundColor: "#E5E5E5",
+    backgroundColor: Colors.gray_box,
     opacity: 0.8,
     borderRadius: 6,
     paddingVertical: 10,

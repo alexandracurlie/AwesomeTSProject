@@ -1,21 +1,22 @@
 import React from "react";
 import {View, Text, StyleSheet} from "react-native";
 import {SectionHeaderProps} from "./utilities";
+import {Colors, Fonts} from "../../../styles";
 
 export const SectionHeader = ({ title }: SectionHeaderProps) => (
-    <View style={styles.container}>
+    <View style={styles.header}>
       <Text style={styles.title}>{title}</Text>
     </View>
   )
 
 const styles = StyleSheet.create({
-  container: {
+  header: {
     marginVertical: 12,
   },
 
   title: {
-    color: "#757F8C",
-    fontFamily: "Sarabun-Medium",
+    color: Colors.dark_gray,
+    fontFamily: Fonts.font,
     fontWeight: "500",
     fontSize: 12,
   },
