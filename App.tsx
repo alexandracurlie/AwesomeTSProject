@@ -1,9 +1,12 @@
 import React from 'react';
-import {HomePage} from "./src/pages/MainPage/HomePage";
+import {NavigationContainer} from "@react-navigation/native";
+import {TabNavigator} from "./src/navigation/TabNavigator";
 
 const App = () => {
   return (
-    <HomePage />
+    <NavigationContainer>
+      <TabNavigator />
+    </NavigationContainer>
   )
 };
 

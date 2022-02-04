@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, Pressable, Text} from 'react-native';
-import {CardProps} from "./utilities";
 import {Colors, Fonts} from "../../styles";
+import {CardProps} from "../../constants/types";
 
 export const Card = ({ backgroundColor, cardNumber, expires, cardHolder, onSwap}: CardProps) => {
 
@@ -9,7 +9,7 @@ export const Card = ({ backgroundColor, cardNumber, expires, cardHolder, onSwap}
 
   return (
     <Pressable onPress={() => onSwap}>
-      <View style={[styles.card, {backgroundColor}]}>
+      <View style={[styles.card, {backgroundColor}]} key={cardNumber}>
         <View style={styles.container}>
           <Text style={styles.logo}>VISA</Text>
         </View>
@@ -81,10 +81,10 @@ const styles = StyleSheet.create({
 
   info: {
     color: Colors.white,
-    lineHeight: 24,
     letterSpacing: 0.1,
+    fontFamily: Fonts.font,
     fontSize: 16,
     fontWeight: "600",
-    fontFamily: Fonts.font,
+    lineHeight: 24,
   }
 });

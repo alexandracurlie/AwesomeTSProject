@@ -2,8 +2,8 @@ import React, {useMemo, useState} from "react";
 import {StyleSheet, TextInput, View} from "react-native";
 import {TabPanel} from "../TabPanel/TabPanel";
 import {History} from "./History/History";
-import {tabs, getData} from "./History/utilities";
 import {Colors, Fonts} from "../../styles";
+import {getData, tabs} from "../../constants/constants";
 
 export const TransactionHistory = () => {
 

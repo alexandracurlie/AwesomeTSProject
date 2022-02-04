@@ -1,6 +1,5 @@
 export const Fonts = {
   font: 'Sarabun',
-
   size: {
     fs_12: 12,
     fs_14: 14,

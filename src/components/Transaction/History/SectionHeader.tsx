@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet} from "react-native";
-import {SectionHeaderProps} from "./utilities";
 import {Colors, Fonts} from "../../../styles";
+import {SectionHeaderProps} from "../../../constants/types";
 
 export const SectionHeader = ({ title }: SectionHeaderProps) => (
     <View style={styles.header}>

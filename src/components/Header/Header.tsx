@@ -2,11 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Avatar} from "../Avatar/Avatar";
 import {Colors, Fonts} from "../../styles";
-
-export type HeaderProps = {
-  title?: string;
-  amount: string;
-};
+import {HeaderProps} from "../../constants/types";
 
 export const Header = ({ title, amount }: HeaderProps) => {
   return (
