@@ -1,7 +1,7 @@
 import React from "react";
 import {View} from "react-native";
 import Svg, {Path, Circle, Mask} from "react-native-svg";
-import {IconProp} from "../../constants/types";
+import {IconProp} from "../../utilities";
 
 export const DiagramIcon = ({color}: IconProp) => (
   <View>

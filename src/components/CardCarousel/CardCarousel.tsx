@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import {View, Dimensions, StyleSheet} from 'react-native';
 import Carousel from 'react-native-anchor-carousel';
 import {Card} from "../BankCard/Card";
-import {cards} from "../../constants/constants";
+import {cards} from "../../utilities";
 
 export const CardCarousel = () => {
   const carouselRef = useRef();

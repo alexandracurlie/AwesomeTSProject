@@ -6,14 +6,13 @@ import {TransactionHistory} from "../components/Transaction/TransactionHistory";
 import {Colors} from "../styles";
 
 export const Home = () => (
-    <SafeAreaView style={styles.safeArea}>
-      <View>
-        <Header amount={'926.21'} title={'Your balance'} />
-        <CardCarousel />
-        <TransactionHistory />
-        <View />
-      </View>
-    </SafeAreaView>
+  <SafeAreaView style={styles.safeArea}>
+    <View>
+      <Header content={'$ 926.21'} title={'Your balance'} />
+      <CardCarousel />
+      <TransactionHistory tabs={['Sent', 'Received']}/>
+    </View>
+  </SafeAreaView>
 );
 
 const styles = StyleSheet.create({

@@ -2,7 +2,7 @@ import React from "react";
 import {SectionList} from "react-native";
 import {Transaction} from "./Transaction";
 import {SectionHeader} from "./SectionHeader";
-import {HistoryProps, ItemProps} from "../../../constants/types";
+import {HistoryProps, ItemProps} from "../../../utilities";
 
 export const History = ({ data }: HistoryProps) => {
 

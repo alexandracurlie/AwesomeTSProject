@@ -1,8 +1,8 @@
 import React from "react";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {Home, Test} from "../screens";
+import {Home, SendMoney, Test} from "../screens";
 import {Colors} from "../styles";
-import {Icons} from "../constants/constants";
+import {Icons} from "../utilities";
 
 const Tab = createBottomTabNavigator()
 
@@ -20,7 +20,7 @@ export const TabNavigator = () => (
                 options={{ tabBarIcon: Icons.home }}
     />
     <Tab.Screen name={"Wallet"}
-                component={Test}
+                component={SendMoney}
                 options={{ tabBarIcon: Icons.wallet }}
     />
     <Tab.Screen name={"Send"}

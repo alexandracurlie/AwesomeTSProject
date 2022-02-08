@@ -20,7 +20,7 @@ export type CardProps = {
 
 export type HeaderProps = {
   title?: string;
-  amount: string;
+  content: string;
 };
 
 
@@ -44,6 +44,14 @@ export type TabPanelProps = {
 
 
 // Transaction
+
+
+export type ContainerProps = {
+  activeTab: number,
+  onPress: (id: number | string) => void,
+  data: DailyTransactionItem[],
+  tabs: Tabs[],
+}
 
 export type TransactionProps = {
   name: string,

@@ -1,15 +1,14 @@
 import React from 'react';
 import {StyleSheet, View, Pressable, Text} from 'react-native';
 import {Colors, Fonts} from "../../styles";
-import {CardProps} from "../../constants/types";
+import {CardProps} from "../../utilities";
 
 export const Card = ({ backgroundColor, cardNumber, expires, cardHolder, onSwap}: CardProps) => {
-
   const data = ['* * * *', '* * * *', '* * * *', cardNumber ]
 
   return (
     <Pressable onPress={() => onSwap}>
-      <View style={[styles.card, {backgroundColor}]} key={cardNumber}>
+      <View style={[styles.card, {backgroundColor}]} key={`card_${cardNumber}`}>
         <View style={styles.container}>
           <Text style={styles.logo}>VISA</Text>
         </View>

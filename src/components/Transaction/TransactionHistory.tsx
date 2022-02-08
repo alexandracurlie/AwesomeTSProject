@@ -1,31 +1,24 @@
-import React, {useMemo, useState} from "react";
+import React from "react";
 import {StyleSheet, TextInput, View} from "react-native";
 import {TabPanel} from "../TabPanel/TabPanel";
 import {History} from "./History/History";
+import {Switcher} from "../Switcher/Switcher";
 import {Colors, Fonts} from "../../styles";
-import {getData, tabs} from "../../constants/constants";
+import {ContainerProps} from "../../utilities/";
 
-export const TransactionHistory = () => {
+const Container = ({activeTab, onPress, data, tabs}: ContainerProps) => (
+  <View style={styles.content}>
+    <TabPanel tabs={tabs}
+              activeTab={activeTab}
+              onPress={onPress}/>
 
-  const [active, setActive] = useState<number>(0)
-  const data = useMemo(() => getData(active), [active])
-
-  const onPress = (id: number) => { setActive(id) }
-
-  return (
-    <View style={styles.content}>
-      <TabPanel tabs={tabs}
-                activeTab={active}
-                onPress={onPress}/>
-
-      <TextInput placeholder={"Search transaction"}
-                 placeholderTextColor={"#A6AAB4"}
-                 style={styles.input}
-      />
-      <History data={data}/>
-    </View>
-  )
-}
+    <TextInput placeholder={"Search transaction"}
+               placeholderTextColor={"#A6AAB4"}
+               style={styles.input}
+    />
+    <History data={data}/>
+  </View>
+)
 
 const styles = StyleSheet.create({
   content: {
@@ -43,3 +36,5 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   },
 })
+
+export const TransactionHistory = Switcher(Container)

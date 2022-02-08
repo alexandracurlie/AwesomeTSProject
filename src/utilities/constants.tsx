@@ -1,6 +1,4 @@
 import React from "react";
-import {IconProp} from "./types";
-import {HomeIcon, WalletIcon, SendIcon, DiagramIcon, SettingsIcon} from "../images/svg";
 
 export const cards = [
   {backgroundColor: '#F09D5A', cardNumber: "2001", expires: "12/25", cardHolder: "Lindsey Johnson"},
@@ -8,12 +6,7 @@ export const cards = [
   {backgroundColor: '#54D3AD', cardNumber: "3881", expires: "21/24", cardHolder: "Lindsey Johnson"},
 ];
 
-export const tabs = [
-  {id: 0, title: "Sent"},
-  {id: 1, title: "Received"},
-]
-
-const sent = [
+export const sent = [
   {
     day: "Today",
     data: [
@@ -29,7 +22,7 @@ const sent = [
     ]
   },
 ]
-const received = [
+export const received = [
   {
     day: "Today",
     data: [
@@ -45,13 +38,3 @@ const received = [
     ]
   },
 ]
-
-export const getData = (active: number) => active === 0 ? sent : received
-
-export const Icons = {
-  home: ({color}: IconProp) => <HomeIcon color={color}/>,
-  wallet: ({color}: IconProp) => <WalletIcon color={color}/>,
-  send: ({color}: IconProp) => <SendIcon color={color}/>,
-  diagram: ({color}: IconProp) => <DiagramIcon color={color}/>,
-  settings: ({color}: IconProp) => <SettingsIcon color={color}/>,
-}

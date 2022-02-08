@@ -2,26 +2,25 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Avatar} from "../Avatar/Avatar";
 import {Colors, Fonts} from "../../styles";
-import {HeaderProps} from "../../constants/types";
+import {HeaderProps} from "../../utilities";
 
-export const Header = ({ title, amount }: HeaderProps) => {
-  return (
-    <View style={styles.header}>
-      <Text style={styles.text}>{title}</Text>
-      <View style={styles.content}>
-        <Text style={styles.amount}>$ {amount}</Text>
-        <Avatar userMode={true}/>
-      </View>
+export const Header = ({ title, content }: HeaderProps) => (
+  <View style={styles.header}>
+    <Text style={styles.title}>{title}</Text>
+    <View style={styles.content}>
+      <Text style={styles.text}>{content}</Text>
+      <Avatar userMode={true}/>
     </View>
-  );
-};
+  </View>
+);
+
 
 const styles = StyleSheet.create({
   header: {
     padding: 16,
   },
 
-  text: {
+  title: {
     color: Colors.gray,
     fontFamily: Fonts.font,
     fontSize: 14,
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 
-  amount: {
+  text: {
     color: Colors.black,
     fontFamily: Fonts.font,
     fontWeight: '600',
