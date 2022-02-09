@@ -10,7 +10,9 @@ export const TabPanel = ({ tabs, activeTab, onPress }: TabPanelProps) => (
       <Tab title={item.title}
            id={item.id}
            isActive={activeTab === item.id}
-           onPress={onPress}/>
+           onPress={onPress}
+           key={item.id}
+      />
     ))}
   </View>
 )

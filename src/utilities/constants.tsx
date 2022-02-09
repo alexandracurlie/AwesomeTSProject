@@ -1,10 +1,55 @@
 import React from "react";
 
 export const cards = [
-  {backgroundColor: '#F09D5A', cardNumber: "2001", expires: "12/25", cardHolder: "Lindsey Johnson"},
-  {backgroundColor: '#8C72FB', cardNumber: "8014", expires: "08/21", cardHolder: "Lindsey Johnson"},
-  {backgroundColor: '#54D3AD', cardNumber: "3881", expires: "21/24", cardHolder: "Lindsey Johnson"},
+  {
+    id: 0,
+    backgroundColor: '#F09D5A',
+    cardNumber: "2001",
+    expires: "12/25",
+    cardHolder: "Lindsey Johnson",
+    amount: "$ 1,345.56"
+  },
+  {
+    id: 1,
+    backgroundColor: '#8C72FB',
+    cardNumber: "8014",
+    expires: "08/21",
+    cardHolder: "Lindsey Johnson",
+    amount: "$ 5,131.89"
+  },
+  {
+    id: 2,
+    backgroundColor: '#54D3AD',
+    cardNumber: "3881",
+    expires: "21/24",
+    cardHolder: "Lindsey Johnson",
+    amount: "$ 0.42"
+  },
 ];
+
+export const cardsShort = [
+  {
+    id: 0,
+    cardNumber: "2001",
+    amount: "$ 1,345.56"
+  },
+  {
+    id: 1,
+    cardNumber: "8014",
+    amount: "$ 5,131.89"
+  },
+  {
+    id: 2,
+    cardNumber: "3881",
+    amount: "$ 0.42"
+  },
+];
+
+export const friends = [
+  {id: 0, name: "Boris", lastName: "Johnson"},
+  {id: 1, name: "Monti", lastName: "Python"},
+  {id: 2, name: "Angela", lastName: "Merkel"},
+]
 
 export const sent = [
   {

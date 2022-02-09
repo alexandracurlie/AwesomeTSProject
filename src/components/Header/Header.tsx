@@ -14,7 +14,6 @@ export const Header = ({ title, content }: HeaderProps) => (
   </View>
 );
 
-
 const styles = StyleSheet.create({
   header: {
     padding: 16,

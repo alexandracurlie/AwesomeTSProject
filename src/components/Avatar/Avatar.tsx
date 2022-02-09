@@ -24,11 +24,13 @@ const styles = StyleSheet.create({
   img: {
     width: 40,
     height: 40,
+    borderWidth: 1,
+    borderColor: Colors.white,
+    borderRadius: 50,
   },
 
   mode: {
-    borderWidth: 3,
     borderColor: Colors.avatar_border,
-    borderRadius: 50,
+    borderWidth: 3,
   }
 })

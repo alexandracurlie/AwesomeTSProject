@@ -1,22 +1,24 @@
-import React from "react";
-import {StyleSheet, View} from "react-native";
+import React, {useMemo} from "react";
+import {View} from "react-native";
 import {TabPanel} from "../../TabPanel/TabPanel";
 import {Switcher} from "../../Switcher/Switcher";
-import {ContainerProps} from "../../../utilities";
+import {dataGenerator, getData, ContainerProps} from "../../../utilities";
+import {BankTransaction} from "./BankTransaction";
+import {CardTransaction} from "./CardTransaction";
 
-const Container = ({activeTab, onPress, data, tabs}: ContainerProps) => (
-  <View style={styles.content}>
-    <TabPanel tabs={tabs}
-              activeTab={activeTab}
-              onPress={onPress}/>
-  </View>
-)
+const Container = ({activeTab, onPress, tabs}: ContainerProps) => {
 
+  const newData = dataGenerator(CardTransaction, BankTransaction)
+  const Data = useMemo(() => getData(activeTab, newData), [activeTab])
 
-const styles = StyleSheet.create({
-  content: {
-
-  }
-})
+  return (
+    <View>
+      <TabPanel tabs={tabs}
+                activeTab={activeTab}
+                onPress={onPress}/>
+      <Data />
+    </View>
+  )
+}
 
 export const CreateTransaction = Switcher(Container)

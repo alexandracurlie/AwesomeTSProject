@@ -1,9 +1,10 @@
 import React from "react";
 import {HomeIcon, WalletIcon, SendIcon, DiagramIcon, SettingsIcon} from "../images/svg";
 import {IconProp, Tabs} from "./types";
-import {sent, received} from "./constants";
 
-export const getData = (active: number | string) => active === 0 ? sent : received
+export const dataGenerator = (data1: any, data2: any) => ({0: data1, 1: data2})
+
+export const getData = (active: number | string, data: any) => active === 0 ? data[0] : data[1]
 
 export const tabsGenerator = (tabs: string[]): Tabs[] =>
   tabs.map((item: string, index: number) => ({id: index, title: item}))
