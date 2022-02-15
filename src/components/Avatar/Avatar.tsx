@@ -5,7 +5,7 @@ import {AvatarProps} from "../../utilities";
 
 export const Avatar = ({userMode}: AvatarProps) => (
   <View style={styles.imgContainer}>
-    <Image source={require('./artworks.jpg')}
+    <Image source={require('../../images/avatars/artworks.jpg')}
            style={[styles.img, userMode && styles.mode]}
     />
   </View>
