@@ -2,18 +2,20 @@ import React from "react";
 import {StyleSheet, View} from "react-native";
 import {Tab} from "./Tab";
 import {Colors} from "../../styles";
-import {TabPanelProps, Tabs} from "../../constants/types";
+import {TabPanelProps, Tabs} from "../../utilities";
 
 export const TabPanel = ({ tabs, activeTab, onPress }: TabPanelProps) => (
-    <View style={styles.header}>
-      {tabs.map((item: Tabs) => (
-        <Tab title={item.title}
-             id={item.id}
-             isActive={activeTab === item.id}
-             onPress={onPress}/>
-      ))}
-    </View>
-  )
+  <View style={styles.header}>
+    {tabs.map((item: Tabs) => (
+      <Tab title={item.title}
+           id={item.id}
+           isActive={activeTab === item.id}
+           onPress={onPress}
+           key={item.id}
+      />
+    ))}
+  </View>
+)
 
 const styles = StyleSheet.create({
   header: {

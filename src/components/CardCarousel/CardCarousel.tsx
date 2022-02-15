@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
 import {View, Dimensions, StyleSheet} from 'react-native';
 import Carousel from 'react-native-anchor-carousel';
-import {Card} from "../BankCard/Card";
-import {cards} from "../../constants/constants";
+import {BankCard} from "../Cards/BankCard";
+import {cards} from "../../utilities";
 
 export const CardCarousel = () => {
   const carouselRef = useRef();
@@ -14,12 +14,12 @@ export const CardCarousel = () => {
       // @ts-ignore
       carouselRef.current.scrollToIndex(index)
     }
-    return <Card backgroundColor={item.backgroundColor}
-                 cardNumber={item.cardNumber}
-                 expires={item.expires}
-                 cardHolder={item.cardHolder}
-                 onSwap={onSwap}
-                 key={item.cardNumber}
+    return <BankCard backgroundColor={item.backgroundColor}
+                     cardNumber={item.cardNumber}
+                     expires={item.expires}
+                     cardHolder={item.cardHolder}
+                     onSwap={onSwap}
+                     key={item.cardNumber}
           />
     }
 

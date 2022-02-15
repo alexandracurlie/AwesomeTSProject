@@ -2,7 +2,7 @@ import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 import {Avatar} from "../../Avatar/Avatar";
 import {Colors, Fonts} from "../../../styles";
-import {TransactionProps} from "../../../constants/types";
+import {TransactionProps} from "../../../utilities";
 
 export const Transaction = ({ name, date, amount }: TransactionProps) => (
     <View style={stylesEl.header}>

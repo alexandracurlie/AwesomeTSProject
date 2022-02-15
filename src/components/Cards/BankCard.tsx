@@ -1,17 +1,18 @@
 import React from 'react';
 import {StyleSheet, View, Pressable, Text} from 'react-native';
 import {Colors, Fonts} from "../../styles";
-import {CardProps} from "../../constants/types";
+import {CardProps} from "../../utilities";
+import {VisaLogoIcon, BurgerMenuIcon} from "../../images/svg";
 
-export const Card = ({ backgroundColor, cardNumber, expires, cardHolder, onSwap}: CardProps) => {
-
+export const BankCard = ({ backgroundColor, cardNumber, expires, cardHolder, onSwap}: CardProps) => {
   const data = ['* * * *', '* * * *', '* * * *', cardNumber ]
 
   return (
     <Pressable onPress={() => onSwap}>
-      <View style={[styles.card, {backgroundColor}]} key={cardNumber}>
+      <View style={[styles.card, {backgroundColor}]} key={`card_${cardNumber}`}>
         <View style={styles.container}>
-          <Text style={styles.logo}>VISA</Text>
+          <VisaLogoIcon color={Colors.white}/>
+          <BurgerMenuIcon />
         </View>
         <View style={styles.container}>
           { data.map(item => <View><Text style={styles.cardNumber}>{item}</Text></View>) }
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: "center",
   },
 
   content: {

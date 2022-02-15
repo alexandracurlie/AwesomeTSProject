@@ -1,7 +1,7 @@
 import React from "react";
 import {View} from "react-native";
 import Svg, {Path} from "react-native-svg";
-import {IconProp} from "../../constants/types";
+import {IconProp} from "../../utilities";
 
 export const HomeIcon = ({color}: IconProp) => (
   <View>

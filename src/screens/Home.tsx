@@ -1,19 +1,16 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import {Header} from '../components/Header/Header';
 import {CardCarousel} from "../components/CardCarousel/CardCarousel";
-import {TransactionHistory} from "../components/Transaction/TransactionHistory";
+import {TransactionHistory} from "../components/Transaction/TransactionHistory/TransactionHistory";
 import {Colors} from "../styles";
 
 export const Home = () => (
-    <SafeAreaView style={styles.safeArea}>
-      <View>
-        <Header amount={'926.21'} title={'Your balance'} />
-        <CardCarousel />
-        <TransactionHistory />
-        <View />
-      </View>
-    </SafeAreaView>
+  <SafeAreaView style={styles.safeArea}>
+      <Header content={'$ 926.21'} title={'Your balance'} />
+      <CardCarousel />
+      <TransactionHistory tabs={['Sent', 'Received']}/>
+  </SafeAreaView>
 );
 
 const styles = StyleSheet.create({

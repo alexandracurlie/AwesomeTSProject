@@ -1,18 +1,18 @@
 import React from "react";
 import {StyleSheet, Text, Pressable} from "react-native";
 import {Colors, Fonts} from "../../styles";
-import {TabProps} from "../../constants/types";
+import {TabProps} from "../../utilities";
 
 export const Tab = ({title, id, isActive, onPress}: TabProps) => (
-    <Pressable style={[styles.header, isActive && activeStyles.header]}
-               onPress={()=> onPress(id)}
-               key={id}
+  <Pressable style={[styles.header, isActive && activeStyles.header]}
+             onPress={()=> onPress(id)}
+             key={id}
     >
-      <Text style={[styles.title, isActive && activeStyles.title]}>
-        {title}
-      </Text>
-    </Pressable>
-  )
+    <Text style={[styles.title, isActive && activeStyles.title]}>
+      {title}
+    </Text>
+  </Pressable>
+)
 
 const styles = StyleSheet.create({
   header: {

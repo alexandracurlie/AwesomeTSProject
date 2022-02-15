@@ -8,19 +8,36 @@ export type AvatarProps = {
 // Bank card
 
 export type CardProps = {
-  backgroundColor: string;
+  id?: string | number | undefined;
+  backgroundColor?: string;
   cardNumber: string;
-  expires: string;
-  cardHolder: string;
+  expires?: string;
+  cardHolder?: string;
   index?: string | number;
   onSwap?: () => void;
+  amount?: string | number | undefined;
 };
+
+export type BankCardProps = {
+  cardNumber: string;
+  amount: string;
+  id: number | string;
+}
+
+export type BankCardSmallProps = {
+  id: number | string,
+  cardNumber: string,
+  amount: string,
+  onPress?: () => void,
+  active?: number | string
+}
+
 
 // Header
 
 export type HeaderProps = {
   title?: string;
-  amount: string;
+  content: string;
 };
 
 
@@ -45,6 +62,12 @@ export type TabPanelProps = {
 
 // Transaction
 
+export type ContainerProps = {
+  activeTab: number,
+  onPress: (id: number | string) => void,
+  tabs: Tabs[],
+}
+
 export type TransactionProps = {
   name: string,
   date: string,
@@ -63,7 +86,7 @@ export type HistoryProps = {
   data: DailyTransactionItem[]
 }
 
-export type SectionHeaderProps = {
+export type TitleProps = {
   title: string,
 }
 
