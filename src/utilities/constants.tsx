@@ -1,4 +1,5 @@
 import React from "react";
+import {IconsSettings} from "../images/svg";
 
 export const cards = [
   {
@@ -49,6 +50,19 @@ export const friends = [
   {id: 0, name: "Boris", lastName: "Johnson"},
   {id: 1, name: "Monti", lastName: "Python"},
   {id: 2, name: "Angela", lastName: "Merkel"},
+]
+
+export const cardsData = [
+  {id: 0, icon: IconsSettings.info, title: "Profile information"},
+  {id: 1, icon: IconsSettings.password, title: "Password"},
+  {id: 2, icon: IconsSettings.email, title: "Email"},
+  {id: 3, icon: IconsSettings.phone, title: "Phone Number"},
+  {id: 4, icon: IconsSettings.notification, title: "Notification"},
+  {id: 5, icon: IconsSettings.currency, title: "Currency"},
+  {id: 6, icon: IconsSettings.lang, title: "Language"},
+  {id: 7, icon: IconsSettings.account, title: "Account"},
+  {id: 8, icon: IconsSettings.policy, title: "Privacy Policy"},
+  {id: 9, icon: IconsSettings.terms, title: "Terms of Use"},
 ]
 
 export const sent = [
