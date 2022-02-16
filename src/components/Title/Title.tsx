@@ -11,7 +11,7 @@ export const Title = ({ title }: TitleProps) => (
 
 const styles = StyleSheet.create({
   header: {
-    marginVertical: 12,
+    marginHorizontal: 16,
   },
 
   title: {

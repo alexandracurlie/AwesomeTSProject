@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
   },
 
   container_title: {
-    paddingHorizontal: 16,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -41,5 +40,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '600',
     color: Colors.purple,
+    paddingHorizontal: 16,
   }
 })

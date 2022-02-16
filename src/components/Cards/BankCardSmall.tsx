@@ -1,6 +1,7 @@
 import React from "react";
 import {StyleSheet, Text, View, Pressable} from "react-native";
-import {Colors, Fonts} from "../../styles";
+import DropShadow from "react-native-drop-shadow";
+import {Colors, Fonts, ScreenSize, Shadows} from "../../styles";
 import {VisaLogoIcon} from "../../images/svg";
 import {BankCardSmallProps} from "../../utilities";
 
@@ -8,22 +9,24 @@ export const BankCardSmall = ({cardNumber, amount, active, id, onPress}: BankCar
   const styles = active === id ? activeStyles : baseStyles
 
   return (
-    <Pressable style={styles.container} onPress={onPress}>
-      <VisaLogoIcon color={active === id ? Colors.white : Colors.gray}/>
-      <View style={styles.card_number_box}>
-        <Text style={styles.card_number}>*  *  *  *</Text>
-        <Text style={styles.card_number}>{cardNumber}</Text>
-      </View>
-      <Text style={styles.amount}>{amount}</Text>
-    </Pressable>
+    <DropShadow style={styles.shadow}>
+      <Pressable style={styles.container} onPress={onPress}>
+        <VisaLogoIcon color={active === id ? Colors.white : Colors.gray}/>
+        <View style={styles.card_number_box}>
+          <Text style={styles.card_number}>*  *  *  *</Text>
+          <Text style={styles.card_number}>{cardNumber}</Text>
+        </View>
+        <Text style={styles.amount}>{amount}</Text>
+      </Pressable>
+    </DropShadow>
   )
 }
 
 const baseStyles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
-    width: 144,
-    height: 120,
+    width: ScreenSize.width * 38.4,
+    height: ScreenSize.height * 14.72,
     padding: 12,
     margin: 8,
     borderRadius: 6,
@@ -51,7 +54,9 @@ const baseStyles = StyleSheet.create({
 
   logo: {
     color: Colors.gray,
-  }
+  },
+
+  shadow: Shadows.card_shadow_gray,
 })
 
 const activeStyles = StyleSheet.create({
@@ -74,5 +79,7 @@ const activeStyles = StyleSheet.create({
 
   logo: {
     color: Colors.white,
-  }
+  },
+
+  shadow: Shadows.card_shadow_purple,
 })

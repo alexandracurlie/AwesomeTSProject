@@ -1,31 +1,35 @@
 import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 import {Avatar} from "../../Avatar/Avatar";
-import {Colors, Fonts} from "../../../styles";
+import DropShadow from "react-native-drop-shadow";
+import {Colors, Fonts, Shadows} from "../../../styles";
 import {TransactionProps} from "../../../utilities";
 
 export const Transaction = ({ name, date, amount }: TransactionProps) => (
-    <View style={stylesEl.header}>
-      <View style={stylesEl.image}>
-        <Avatar userMode={false} />
+    <DropShadow style={styles.shadow}>
+      <View style={styles.header}>
+        <View style={styles.image}>
+          <Avatar userMode={false} />
+        </View>
+        <View style={styles.info}>
+          <Text style={styles.font}>to:
+            <Text style={styles.name}> {name}</Text>
+          </Text>
+          <Text style={styles.date}>{date}</Text>
+        </View>
+        <View style={styles.amount}>
+          <Text style={styles.amount_title}>$ {amount}</Text>
+        </View>
       </View>
-      <View style={stylesEl.info}>
-        <Text style={stylesEl.font}>to:
-          <Text style={stylesEl.name}> {name}</Text>
-        </Text>
-        <Text style={stylesEl.date}>{date}</Text>
-      </View>
-      <View style={stylesEl.amount}>
-        <Text style={stylesEl.amount_title}>$ {amount}</Text>
-      </View>
-    </View>
+    </DropShadow>
   )
 
-const stylesEl = StyleSheet.create({
+const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     padding: 15,
     marginVertical: 6,
+    marginHorizontal: 16,
     backgroundColor: Colors.white,
     borderRadius: 6,
   },
@@ -74,4 +78,6 @@ const stylesEl = StyleSheet.create({
     fontSize: 16,
     textAlign: "right",
   },
+
+  shadow: Shadows.card_shadow_gray,
 })

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {FlatList} from "react-native";
+import {FlatList, StyleSheet} from "react-native";
 import {BankCardProps, cardsShort} from "../../utilities";
 import {BankCardSmall} from "../Cards/BankCardSmall";
 import {AddCard} from "../Cards/AddCard";
@@ -26,6 +26,13 @@ export const BankCardsList = () => {
               horizontal={true}
               ListHeaderComponent={AddCard}
               inverted={true}
+              style={styles.container}
     />
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingVertical: 10,
+  }
+})

@@ -1,22 +1,18 @@
 import React, {useState} from "react";
-import {FlatList} from "react-native";
-import {ProfileCard, ProfileCardProps} from "../Cards/ProfileCard";
+import {FlatList, StyleSheet} from "react-native";
+import {CardMini} from "../Cards/CardMini";
+import {Avatar} from "../Avatar/Avatar";
 import {friends} from "../../utilities";
 
-type renderItemProps = {
-  item: ProfileCardProps
-}
-
 export const ProfilesList = () => {
-
   const [active, setActive] = useState<number | string>(0)
 
-  const renderItem = ({ item }: renderItemProps) => (
-    <ProfileCard name={item.name}
-                 lastName={item.lastName}
-                 id={item.id}
-                 active={active}
-                 onPress={() => { setActive(item.id) }}
+  const renderItem = ({ item }: any) => (
+    <CardMini title={`${item.name} \n ${item.lastName}`}
+              id={item.id}
+              active={active}
+              onPress={() => { setActive(item.id) }}
+              icon={<Avatar userMode={false}/>}
     />
   )
 
@@ -25,6 +21,13 @@ export const ProfilesList = () => {
               renderItem={renderItem}
               horizontal={true}
               inverted={true}
+              style={styles.container}
     />
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingVertical: 10,
+  }
+})

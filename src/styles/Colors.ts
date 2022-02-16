@@ -2,6 +2,7 @@
 export const Colors = {
   background: '#F9FAFB',
   black: '#171D33',
+  black_deep: "#000000",
   black_light: '#3B414B',
   dark_gray: '#757F8C',
   gray: '#A6AAB4',
@@ -14,6 +15,5 @@ export const Colors = {
   green_positive: '#10C971',
   pink_negative: '#FA2E69',
   orange: '#FF7D00',
-  box_shadow: '#C4C4C4',
   avatar_border: '#DDDDEB',
 }

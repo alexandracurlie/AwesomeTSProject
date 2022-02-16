@@ -32,18 +32,17 @@ const Container = ({activeTab, onPress, tabs}: ContainerProps) => {
 
 const styles = StyleSheet.create({
   content: {
-    padding: 16,
     height: "60%",
     fontFamily: Fonts.font,
   },
 
   input: {
     backgroundColor: Colors.gray_box,
-    opacity: 0.8,
     borderRadius: 6,
     paddingVertical: 10,
     paddingHorizontal: 16,
     marginVertical: 15,
+    marginHorizontal: 16,
   },
 })
 
