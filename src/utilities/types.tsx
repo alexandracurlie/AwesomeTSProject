@@ -1,10 +1,4 @@
 
-// Avatar
-
-export type AvatarProps = {
-  userMode: boolean,
-}
-
 // Bank card
 
 export type CardProps = {
@@ -23,23 +17,6 @@ export type BankCardProps = {
   amount: string;
   id: number | string;
 }
-
-export type BankCardSmallProps = {
-  id: number | string,
-  cardNumber: string,
-  amount: string,
-  onPress?: () => void,
-  active?: number | string
-}
-
-
-// Header
-
-export type HeaderProps = {
-  title?: string;
-  content: string;
-};
-
 
 // Tab panel
 
@@ -84,10 +61,6 @@ export type DailyTransactionItem = {
 
 export type HistoryProps = {
   data: DailyTransactionItem[]
-}
-
-export type TitleProps = {
-  title: string,
 }
 
 export type IconProp = {

@@ -97,3 +97,7 @@ export const received = [
     ]
   },
 ]
+
+export const Schema = {
+  amount: (value: any) => value.match(/^\d+$/),
+}

@@ -1,9 +1,12 @@
 import React from "react";
 import {View, Text, StyleSheet} from "react-native";
 import {Colors, Fonts} from "../../styles";
-import {TitleProps} from "../../utilities";
 
-export const Title = ({ title }: TitleProps) => (
+type Props = {
+  title: string,
+}
+
+export const Title = ({ title }: Props) => (
     <View style={styles.header}>
       <Text style={styles.title}>{title}</Text>
     </View>

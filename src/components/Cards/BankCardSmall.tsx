@@ -1,24 +1,28 @@
 import React from "react";
 import {StyleSheet, Text, View, Pressable} from "react-native";
-import DropShadow from "react-native-drop-shadow";
 import {Colors, Fonts, ScreenSize, Shadows} from "../../styles";
 import {VisaLogoIcon} from "../../images/svg";
-import {BankCardSmallProps} from "../../utilities";
 
-export const BankCardSmall = ({cardNumber, amount, active, id, onPress}: BankCardSmallProps) => {
+export type Props = {
+  id: number | string,
+  cardNumber: string,
+  amount: string,
+  onPress?: () => void,
+  active?: number | string
+}
+
+export const BankCardSmall = ({cardNumber, amount, active, id, onPress}: Props) => {
   const styles = active === id ? activeStyles : baseStyles
 
   return (
-    <DropShadow style={styles.shadow}>
-      <Pressable style={styles.container} onPress={onPress}>
-        <VisaLogoIcon color={active === id ? Colors.white : Colors.gray}/>
-        <View style={styles.card_number_box}>
-          <Text style={styles.card_number}>*  *  *  *</Text>
-          <Text style={styles.card_number}>{cardNumber}</Text>
-        </View>
-        <Text style={styles.amount}>{amount}</Text>
-      </Pressable>
-    </DropShadow>
+    <Pressable style={styles.container} onPress={onPress}>
+      <VisaLogoIcon color={active === id ? Colors.white : Colors.gray}/>
+      <View style={styles.card_number_box}>
+        <Text style={styles.card_number}>*  *  *  *</Text>
+        <Text style={styles.card_number}>{cardNumber}</Text>
+      </View>
+      <Text style={styles.amount}>{amount}</Text>
+    </Pressable>
   )
 }
 
@@ -55,8 +59,6 @@ const baseStyles = StyleSheet.create({
   logo: {
     color: Colors.gray,
   },
-
-  shadow: Shadows.card_shadow_gray,
 })
 
 const activeStyles = StyleSheet.create({
@@ -64,6 +66,7 @@ const activeStyles = StyleSheet.create({
 
   container: {
     ...baseStyles.container,
+    ...Shadows.card_shadow_purple,
     backgroundColor: Colors.purple,
   },
 
@@ -80,6 +83,4 @@ const activeStyles = StyleSheet.create({
   logo: {
     color: Colors.white,
   },
-
-  shadow: Shadows.card_shadow_purple,
 })

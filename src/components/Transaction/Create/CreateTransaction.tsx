@@ -7,16 +7,15 @@ import {BankTransaction} from "./BankTransaction";
 import {CardTransaction} from "./CardTransaction";
 
 const Container = ({activeTab, onPress, tabs}: ContainerProps) => {
-
-  const newData = dataGenerator(CardTransaction, BankTransaction)
-  const Data = useMemo(() => getData(activeTab, newData), [activeTab])
+  const data = dataGenerator(CardTransaction, BankTransaction)
+  const DataComp = useMemo(() => getData(activeTab, data), [activeTab])
 
   return (
     <View>
       <TabPanel tabs={tabs}
                 activeTab={activeTab}
                 onPress={onPress}/>
-      <Data />
+      <DataComp />
     </View>
   )
 }

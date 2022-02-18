@@ -1,26 +1,20 @@
 import React from "react";
 import {StyleSheet, View, Text, Pressable} from "react-native";
-import DropShadow from "react-native-drop-shadow";
 import {Colors, Fonts, Shadows, ScreenSize} from "../../styles";
 
-type CardProps = {
+type Props = {
   icon: any,
   title: string,
 }
 
-export const Card = ({icon, title}: CardProps) => {
-  return (
-    <DropShadow style={styles.shadow}>
-      <Pressable style={styles.container}>
-        <View style={styles.circle}>
-          {icon}
-        </View>
-        <Text style={styles.title}>{title}</Text>
-      </Pressable>
-    </DropShadow>
-  )
-}
-
+export const Card = ({icon, title}: Props) => (
+  <Pressable style={styles.container}>
+    <View style={styles.circle}>
+      {icon}
+    </View>
+    <Text style={styles.title}>{title}</Text>
+  </Pressable>
+)
 
 const styles = StyleSheet.create({
   container: {
@@ -32,15 +26,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 6,
     backgroundColor: Colors.white,
+    ...Shadows.card_shadow_gray,
   },
 
   circle: {
-    borderRadius: 50,
-    backgroundColor: Colors.purple,
     width: 40,
     height: 40,
     justifyContent: "center",
     alignItems: "center",
+    borderRadius: 50,
+    backgroundColor: Colors.purple,
   },
 
   title: {
@@ -49,6 +44,4 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     lineHeight: 20,
   },
-
-  shadow: Shadows.card_shadow_gray,
 })

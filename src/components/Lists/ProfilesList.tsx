@@ -12,8 +12,7 @@ export const ProfilesList = () => {
               id={item.id}
               active={active}
               onPress={() => { setActive(item.id) }}
-              icon={<Avatar userMode={false}/>}
-    />
+              icon={<Avatar userMode={false}/>} />
   )
 
   return (
@@ -22,7 +21,7 @@ export const ProfilesList = () => {
               horizontal={true}
               inverted={true}
               style={styles.container}
-    />
+              keyExtractor={(item => `${item.id}`)} />
   )
 }
 

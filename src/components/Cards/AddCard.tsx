@@ -1,15 +1,31 @@
-import React from "react";
-import {StyleSheet} from "react-native";
+import React, {useState} from "react";
+import {StyleSheet, View} from "react-native";
 import {CardMini} from "./CardMini";
+import {ModalForm} from "../Modals/ModalForm";
 import {AddIcon} from "../../images/svg/AddIcon";
 import {Colors} from "../../styles";
 
-export const AddCard = () => (
-  <CardMini title={"New \n credit card "}
-            style={headerComponentStyles}
-            id={123}
-            icon={<AddIcon color={Colors.white} />} />
-)
+export const AddCard = () =>{
+  const [modalForm, setModalForm] = useState<boolean>(false)
+
+  const toggleModalForm = () => {
+    setModalForm(!modalForm)
+  }
+
+  return (
+    <View>
+      <CardMini title={"New \n credit card"}
+                style={headerComponentStyles}
+                id={123}
+                icon={<AddIcon color={Colors.white} />}
+                onPress={toggleModalForm}
+      />
+      <ModalForm visible={modalForm}
+                 onPress={toggleModalForm}
+      />
+    </View>
+  )
+}
 
 const headerComponentStyles = StyleSheet.create({
   container: {

@@ -2,9 +2,13 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Avatar} from "../Avatar/Avatar";
 import {Colors, Fonts} from "../../styles";
-import {HeaderProps} from "../../utilities";
 
-export const Header = ({ title, content }: HeaderProps) => (
+export type Props = {
+  title?: string;
+  content: string;
+};
+
+export const Header = ({ title, content }: Props) => (
   <View style={styles.header}>
     <Text style={styles.title}>{title}</Text>
     <View style={styles.content}>

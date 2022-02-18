@@ -1,9 +1,9 @@
 import React from "react";
 import {SafeAreaView, StyleSheet, ScrollView, View} from 'react-native';
-import {Colors} from "../styles";
 import {Header} from "../components/Header/Header";
 import {Card} from "../components/Cards/Card";
 import {cardsData} from "../utilities";
+import {Colors} from "../styles";
 
 export const Settings = () => (
   <SafeAreaView style={styles.safeArea}>

@@ -23,7 +23,6 @@ export const Section = ({title, btn, children}: SectionProps) => (
   </View>
 )
 
-
 const styles = StyleSheet.create({
   container: {
     marginTop: 15,

@@ -10,7 +10,6 @@ export const Switcher = (Component: React.FC<any>) =>
     return <Component {...props}
                       activeTab={active}
                       onPress={onPress}
-                      tabs={tabs}
-    />
+                      tabs={tabs} />
   })
 

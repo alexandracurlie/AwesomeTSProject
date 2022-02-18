@@ -16,8 +16,7 @@ export const BankCardsList = () => {
                    amount={item.amount}
                    active={active}
                    id={item.id}
-                   onPress={() => { setActive(item.id) }}
-    />
+                   onPress={() => { setActive(item.id) }} />
   )
 
   return (
@@ -27,6 +26,7 @@ export const BankCardsList = () => {
               ListHeaderComponent={AddCard}
               inverted={true}
               style={styles.container}
+              keyExtractor={(item => `${item.id}`)}
     />
   )
 }

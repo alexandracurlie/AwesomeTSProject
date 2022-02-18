@@ -1,39 +1,73 @@
-import React from "react";
-import {StyleSheet, View, Text, Pressable} from "react-native";
-import { TextInput } from 'react-native-paper';
-import DropShadow from "react-native-drop-shadow";
-import {Colors, Fonts, Shadows} from "../../../styles";
+import React, {useState} from "react";
+import {StyleSheet, View} from "react-native";
+import {TextInput} from 'react-native-paper';
+import {Colors, Fonts} from "../../../styles";
+import {Button} from "../../Buttons/Button";
+import {ModalInfo} from "../../Modals/ModalInfo";
+import {Schema} from "../../../utilities";
 
-export const TransactionForm = () => (
+export const TransactionForm = () => {
+  const [modalInfo, setModalInfo] = useState<boolean>(false)
+  const [error, setError] = useState<boolean>(false)
+  const [state, setState] = useState({amount: "", description: "", } )
+
+  const toggleModalInfo = () => {
+    setModalInfo(!modalInfo)
+  }
+
+  const onTextChange = (value: any) => {
+    setState(prevState => ({...prevState, amount: value}))
+
+    if (Schema.amount(value)) {
+      setError(false)
+    } else {
+      setError(true)
+    }
+  }
+
+  return (
     <View style={styles.container}>
-      <TextInput mode={"outlined"}
-                 label={"Amount"}
-                 left={<TextInput.Affix text={"$"} textStyle={styles.text} />}
-                 style={styles.input}
-                 selectionColor={Colors.purple}
-                 outlineColor={Colors.gray_light}
-                 placeholderTextColor={Colors.gray}
-      />
+      <View style={styles.margin}>
+        <TextInput mode={"outlined"}
+                   label={"Amount"}
+                   left={<TextInput.Affix text={"$"} textStyle={styles.text} />}
+                   style={styles.input}
+                   selectionColor={Colors.purple}
+                   outlineColor={Colors.gray_light}
+                   placeholderTextColor={Colors.gray}
+                   value={state.amount}
+                   keyboardType={"decimal-pad"}
+                   onChangeText={onTextChange}
+                   error={error} />
 
-      <TextInput mode={"outlined"}
-                 label={"Description (optional)"}
-                 style={styles.input}
-                 placeholderTextColor={Colors.gray}
-                 selectionColor={Colors.purple}
-                 outlineColor={Colors.gray_light}
+        <TextInput mode={"outlined"}
+                   label={"Description (optional)"}
+                   style={styles.input}
+                   placeholderTextColor={Colors.gray}
+                   selectionColor={Colors.purple}
+                   outlineColor={Colors.gray_light}
+                   value={state.description}
+                   onChangeText={(value) => setState(prevState => ({...prevState, description: value}))} />
+      </View>
 
-      />
-      <DropShadow style={styles.shadow}>
-        <Pressable style={styles.btn}>
-          <Text style={styles.btn_text}>Confirm</Text>
-        </Pressable>
-      </DropShadow>
+      <View style={styles.margin}>
+        <Button size={"large"} title={"Confirm"} disabled={error} onPress={toggleModalInfo}/>
+      </View>
+
+      <ModalInfo visible={modalInfo}
+                 onPress={toggleModalInfo}
+                 content={state.amount} />
     </View>
   )
+}
 
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
+  },
+
+  margin: {
+    marginVertical: 10,
   },
 
   input: {
@@ -48,24 +82,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: Colors.gray_light,
   },
-
-  btn: {
-    width: "100%",
-    padding: 14,
-    marginTop: 15,
-    marginBottom: 40,
-    backgroundColor: Colors.purple,
-    borderRadius: 6,
-  },
-
-  btn_text: {
-    color: Colors.white,
-    textAlign: "center",
-    lineHeight: 24,
-    fontFamily: Fonts.font,
-    fontWeight: "600",
-    fontSize: 16,
-  },
-
-  shadow: Shadows.shadow_purple,
 })

@@ -31,4 +31,14 @@ export const Shadows = {
     shadowOpacity: 0.32,
     shadowRadius: 20,
   },
+
+  modal: {
+    shadowColor: Colors.black_deep,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+  }
 }

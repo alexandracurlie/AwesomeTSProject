@@ -9,7 +9,6 @@ export const CardCarousel = () => {
   const { width } = Dimensions.get('window')
 
   const renderItem = ({item, index}: any) => {
-
     const onSwap = () => {
       // @ts-ignore
       carouselRef.current.scrollToIndex(index)
@@ -19,9 +18,8 @@ export const CardCarousel = () => {
                      expires={item.expires}
                      cardHolder={item.cardHolder}
                      onSwap={onSwap}
-                     key={item.cardNumber}
-          />
-    }
+                     key={item.cardNumber} />
+  }
 
   return (
     <View style={styles.header}>
@@ -32,8 +30,7 @@ export const CardCarousel = () => {
                 ref={carouselRef}
                 initialIndex={1}
                 inActiveOpacity={0.6}
-                itemWidth={width-80}
-      />
+                itemWidth={width-80} />
     </View>
   )
 }

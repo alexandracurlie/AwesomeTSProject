@@ -1,13 +1,15 @@
 import React from "react";
 import {Image, StyleSheet, View} from "react-native";
 import {Colors} from "../../styles";
-import {AvatarProps} from "../../utilities";
 
-export const Avatar = ({userMode}: AvatarProps) => (
+type Props = {
+  userMode: boolean,
+}
+
+export const Avatar = ({userMode}: Props) => (
   <View style={styles.imgContainer}>
     <Image source={require('../../images/avatars/artworks.jpg')}
-           style={[styles.img, userMode && styles.mode]}
-    />
+           style={[styles.img, userMode && styles.mode]} />
   </View>
 )
 

@@ -1,5 +1,4 @@
 import React from "react";
-import DropShadow from "react-native-drop-shadow";
 import {Pressable, StyleSheet, Text, View} from "react-native";
 import {Colors, Fonts, ScreenSize, Shadows} from "../../styles";
 
@@ -7,19 +6,15 @@ export const CardMini = (props: any) => {
   const styles = props.active === props.id ? activeStyles : baseStyles
 
   return (
-    <DropShadow style={styles.shadow}>
-      <Pressable style={[styles.container, props.style && props.style.container]}
-                 onPress={props.onPress}>
-        <View style={styles.circle}>
-          {props.icon}
-        </View>
-        <Text style={[styles.title, props.style && props.style.title]}>{props.title}</Text>
-      </Pressable>
-    </DropShadow>
+    <Pressable style={[styles.container, props.style && props.style.container]}
+               onPress={props.onPress}>
+      <View style={styles.circle}>
+        {props.icon}
+      </View>
+      <Text style={[styles.title, props.style && props.style.title]}>{props.title}</Text>
+    </Pressable>
   )
 }
-
-
 
 const baseStyles = StyleSheet.create({
   container: {
@@ -51,8 +46,6 @@ const baseStyles = StyleSheet.create({
     color: Colors.gray,
     textAlign: "center",
   },
-
-  shadow: {}
 })
 
 const activeStyles = StyleSheet.create({
@@ -60,6 +53,7 @@ const activeStyles = StyleSheet.create({
 
   container: {
     ...baseStyles.container,
+    ...Shadows.card_shadow_purple,
     backgroundColor: Colors.purple,
   },
 
@@ -67,6 +61,4 @@ const activeStyles = StyleSheet.create({
     ...baseStyles.title,
     color: Colors.white,
   },
-
-  shadow: Shadows.card_shadow_purple,
 })

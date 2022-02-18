@@ -5,7 +5,6 @@ import {Title} from "../../Title/Title";
 import {HistoryProps, ItemProps} from "../../../utilities";
 
 export const History = ({ data }: HistoryProps) => {
-
   const renderSectionHeader = ({ section: { day }}: any) => (<Title title={day} />)
 
   const renderItem = ({ item }: ItemProps) => (
@@ -13,10 +12,11 @@ export const History = ({ data }: HistoryProps) => {
   )
 
   return (
-      <SectionList sections={data}
-                   renderItem={renderItem}
-                   renderSectionHeader={renderSectionHeader}
-                   bounces
-      />
+    <SectionList sections={data}
+                 renderItem={renderItem}
+                 renderSectionHeader={renderSectionHeader}
+                 keyExtractor={((item, index) => item.date.trim() + index)}
+                 bounces
+    />
   )
 }

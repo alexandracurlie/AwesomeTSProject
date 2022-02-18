@@ -15,7 +15,7 @@ export const BankCard = ({ backgroundColor, cardNumber, expires, cardHolder, onS
           <BurgerMenuIcon />
         </View>
         <View style={styles.container}>
-          { data.map(item => <View><Text style={styles.cardNumber}>{item}</Text></View>) }
+          { data.map((item, index) => <View key={index}><Text style={styles.cardNumber}>{item}</Text></View>) }
         </View>
         <View style={styles.container}>
           <View style={styles.content}>
